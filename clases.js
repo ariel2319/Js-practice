@@ -1,3 +1,4 @@
 variables();
 operaciones();
-condicionales();
+casting();
+iteraciones();
