@@ -10,6 +10,17 @@ function iteraciones() {
   } */
 
   //SWITCH
-  
+  console.log('switch')
+  i = 2
+  switch (i) {
+    case 'a':
+      console.log('a');
+    case 'b':
+      console.log('b');
+    case 2:
+      console.log(2);
+    default:
+      console.log('No hay coincidencias..')
+  }
 
 }

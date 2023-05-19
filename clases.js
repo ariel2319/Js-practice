@@ -1,4 +1,7 @@
-variables();
+/* variables();
 operaciones();
-casting();
+casting(); 
 iteraciones();
+arrays();
+desestructurar();
+*/
