@@ -85,3 +85,83 @@ function copyMachine(arr, num) {
   return newArr;
 }
 console.log(copyMachine([true, false, true], 2));
+
+
+//todo Combina arreglos con el operador de propagación
+//*Otra gran ventaja del operador de propagación es la capacidad de combinar arreglos, o de insertar todos los elementos de un arreglo en otro, en cualquier índice. 
+//Hemos definido una función spreadOut que devuelve la variable sentence. Modifica la función usando el operador de propagación para que devuelva el arreglo ['learning', 'to', 'code', 'is', 'fun'].
+
+console.clear()
+function spreadOut() {
+  let fragment = ['to', 'code'];
+  let sentence = ['learning', ...fragment, 'is', 'fun']; // Cambia esta línea
+  return sentence;
+}
+console.log(spreadOut());
+
+//todo Comprueba la presencia de un elemento con indexOf()
+//indexOf() puede ser increíblemente útil para verificar rápidamente la presencia de un elemento en un arreglo. Hemos definido una función, quickCheck, que toma un arreglo y un elemento como argumentos. Modifica la función usando indexOf() para que devuelva true si el elemento pasado existe en el arreglo, y false si no existe.
+
+console.clear()
+function quickCheck(arr, elem) {
+  // Cambia solo el código debajo de esta línea
+  if (arr.indexOf(elem) >= 0 && arr.indexOf(elem) < arr.length)
+    return true
+
+  return false
+  // Cambia solo el código encima de esta línea
+}
+console.log(quickCheck(['squash', 'onions', 'shallots'], 'mushrooms'));
+
+
+//todo Itera a través de todos los elementos de un arreglo utilizando bucles "for"
+//Hemos definido una función, filteredArray, que toma arr, un arreglo anidado, y elem como argumentos, y devuelve un nuevo arreglo. elem representa un elemento que puede o no estar presente en uno o más de los arreglos anidados dentro de arr. Modifica la función, usando un bucle for, para que devuelva una versión filtrada del arreglo pasado de forma que cualquier arreglo anidado dentro de arr que contenga elem haya sido eliminado.
+
+console.clear()
+function filteredArray(arr, elem) {
+  let newArr = [];
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i].indexOf(elem) < 0 || arr[i].indexOf(elem) > arr.length) {
+      newArr.push(arr[i])
+    }
+  }
+  return newArr;
+}
+console.log(filteredArray([[10, 8, 3], [14, 6, 23], [3, 18, 6]], 18));
+
+//todo Crea arreglos complejos multidimensionales
+//Hemos definido una variable, myNestedArray, como un arreglo. Modifica myNestedArray, utilizando cualquier combinación de cadenas, números y booleanos para los elementos de datos, de modo que tenga exactamente cinco niveles de profundidad (recuerda que el arreglo más externo es el nivel 1). En algún lugar del tercer nivel, incluye la cadena deep, en el cuarto nivel, incluye la cadena deeper y en el quinto nivel, incluye la cadena deepest.
+
+console.clear();
+let myNestedArray = [
+  // Cambia solo el código debajo de esta línea
+  ['unshift', false, 1, 2, 3, 'complex', [
+    'deep', [
+      'deeper', [
+        1, 'deepest'
+      ]
+    ]
+  ], 'nested'],
+  ['loop', 'shift', 6, 7, 1000, 'method'],
+  ['concat', false, true, 'spread', 'array'],
+  ['mutate', 1327.98, 'splice', 'slice', 'push'],
+  ['iterate', 1.3849, 7, '8.4876', 'arbitrary', 'depth']
+  // Cambia solo el código encima de esta línea
+];
+
+//todo Agrega pares clave-valor a objetos de JavaScript
+//Se ha creado un objeto foods con tres entradas. Usando la sintaxis de tu elección, agrega tres entradas más: bananas con el valor de 13, grapes con el valor de 35, y strawberries con el valor de 27.
+
+console.clear()
+let foods = {
+  apples: 25,
+  oranges: 32,
+  plums: 28
+};
+
+foods.bananas = 13;
+const grapes = 'grapes'
+foods[grapes] = 35;
+foods.strawberries = 27;
+
+console.log(foods);
