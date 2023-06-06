@@ -164,4 +164,145 @@ const grapes = 'grapes'
 foods[grapes] = 35;
 foods.strawberries = 27;
 
-console.log(foods);
+console.log(foods.apples);
+
+//todo Usa la palabra clave "delete" para eliminar las propiedades de los objetos
+
+let foods2 = {
+  apples: 25,
+  oranges: 32,
+  plums: 28,
+  bananas: 13,
+  grapes: 35,
+  strawberries: 27
+};
+
+// Cambia solo el código debajo de esta línea
+delete foods2.oranges;
+delete foods2.plums;
+delete foods2.strawberries;
+// Cambia solo el código encima de esta línea
+
+console.log(foods2);
+
+//todo Evalúa si un objeto tiene una propiedad
+//JavaScript nos proporciona dos maneras diferentes de hacerlo. Uno utiliza el método hasOwnProperty() y el otro utiliza la palabra clave in. Si tenemos un objeto users con una propiedad de Alan, podríamos comprobar su presencia de cualquiera de las siguientes maneras: users.hasOwnProperty('Alan'); 'Alan' in users;
+
+console.clear();
+let users = {
+  Alan: {
+    age: 27,
+    online: true
+  },
+  Jeff: {
+    age: 32,
+    online: true
+  },
+  Sarah: {
+    age: 48,
+    online: true
+  },
+  Ryan: {
+    age: 19,
+    online: true
+  }
+};
+
+function isEveryoneHere(userObj) {
+  // Cambia solo el código debajo de esta línea<
+  if ('Alan' in userObj && 'Jeff' in userObj && 'Sarah' in userObj && 'Ryan' in userObj) return true
+  return false
+  // Cambia solo el código encima de esta línea
+}
+
+console.log(isEveryoneHere(users));
+
+//todo Itera a través de las claves de un objeto con una sentencia "for...in"
+//We've defined a function countOnline which accepts one argument, allUsers. Use a for...in statement inside this function to loop through the allUsers object and return the number of users whose online property is set to true. An example of an object which could be passed to countOnline is shown below. Each user will have an online property set to either true or false.
+console.clear()
+const usersT = {
+  Alan: {
+    online: false
+  },
+  Jeff: {
+    online: true
+  },
+  Sarah: {
+    online: false
+  }
+}
+
+function countOnline(allUsers) {
+  let count = 0;
+  for (const usersTrue in allUsers) {
+    console.log(allUsers[usersTrue].online)
+    if (allUsers[usersTrue].online == true)
+      count++;
+  }
+  return count
+}
+console.log(countOnline(usersT));
+
+//todo Genera un arreglo de todas las claves de los objetos con Object.keys()
+//Termina de escribir la función getArrayOfUsers para que devuelva un arreglo que contenga todas las propiedades del objeto que recibe como argumento.
+
+console.clear()
+let usersO = {
+  Alan: {
+    age: 27,
+    online: false
+  },
+  Jeff: {
+    age: 32,
+    online: true
+  },
+  Sarah: {
+    age: 48,
+    online: false
+  },
+  Ryan: {
+    age: 19,
+    online: true
+  }
+};
+
+function getArrayOfUsers(obj) {
+  // Cambia solo el código debajo de esta línea
+  const newArr = Object.keys(obj)
+  return newArr
+  // Cambia solo el código encima de esta línea
+}
+
+console.log(getArrayOfUsers(usersO));
+
+//todo Modifica un arreglo almacenado en un objeto
+//Echa un vistazo al objeto que hemos proporcionado en el editor de código. El objeto user contiene tres claves. La clave data contiene cinco claves, una de las cuales contiene un arreglo de friends. A partir de esto, puedes ver lo flexibles que son los objetos como estructuras de datos. Hemos empezado a escribir una función addFriend. Termina de escribirla para que tome un objeto user y agregue el nombre del argumento friend al arreglo almacenado en user.data.friends y devuelva ese arreglo.
+
+let user = {
+  name: 'Kenneth',
+  age: 28,
+  data: {
+    username: 'kennethCodesAllDay',
+    joinDate: 'March 26, 2016',
+    organization: 'freeCodeCamp',
+    friends: [
+      'Sam',
+      'Kira',
+      'Tomo'
+    ],
+    location: {
+      city: 'San Francisco',
+      state: 'CA',
+      country: 'USA'
+    }
+  }
+};
+
+function addFriend(userObj, friend) {
+  // Cambia solo el código debajo de esta línea
+  userObj.data.friends.push(friend)
+  return userObj.data.friends
+  // Cambia solo el código encima de esta línea
+}
+
+console.log(addFriend(user, 'Pete'));
