@@ -171,3 +171,36 @@ function titleCase(str) {
 
 let test = titleCase("I'm a little tea pot");
 console.log(test);
+
+
+//todo Cortar y rebanar
+//Tienes dos arreglos y un índice. Copia cada elemento del primer arreglo en el segundo arreglo, en orden. Comienza insertando elementos en el índice n del segundo arreglo.
+//Devuelve el arreglo resultante. Los arreglos de entrada deben permanecer iguales luego de que se ejecute la función.
+cls()
+function frankenSplice(arr1, arr2, n) {
+  let aux = [...arr2];
+  aux.splice(n, 0, ...arr1)
+  console.log(aux)
+  return aux;
+}
+
+frankenSplice([1, 2, 3], [4, 5, 6], 1);
+
+
+//todo Rebote falsy
+// Elimina todos los valores falsos de un arreglo. Devuelve un nuevo arreglo; no alteres el arreglo original. Los valores falsos en JavaScript son false, null, 0, "", undefined y NaN. Sugerencia: Intenta convertir cada valor a booleano.
+
+cls()
+function bouncer(arr) {
+  let aux = []
+  for (let i = 0; i < arr.length; i++) {
+    if (!!arr[i] === true) {
+      aux.push(arr[i])
+    }
+    console.log(!!arr[i])
+  }
+  console.log(aux)
+  return aux;
+}
+
+bouncer([7, "ate", "", false, 9]);
