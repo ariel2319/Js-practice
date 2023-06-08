@@ -211,3 +211,45 @@ bouncer([7, "ate", "", false, 9]);
 //Por ejemplo, getIndexToIns([1,2,3,4], 1.5) debe devolver 1 por que este valor es más grande que 1 (índice 0), pero menor que 2 (índice 1).
 
 //De esta forma, getIndexToIns([20,3,5], 19) debe devolver 2 porque una vez ordenado el arreglo, éste se verá así [3,5,20] y 19 es menor que 20 (índice 2) y mayor que 5 (índice 1).
+
+cls()
+function getIndexToIns(arr, num) {
+  arr.sort(function (a, b) {
+    return a - b
+  })
+  for (let count = 0; count < arr.length; count++) {
+    console.log(count, arr[count], arr.length)
+    if (arr[count] >= num) {
+      console.log(count);
+      return count
+    }
+  }
+  return arr.length
+}
+getIndexToIns([10, 20, 40, 30, 50], 35);
+
+//todo Mutaciones
+//Devuelve true si la cadena de caracteres en el primer elemento del arreglo contiene todas las letras de la cadena en el segundo elemento del arreglo.
+cls()
+function mutation(arr) {
+  let word1 = arr[0].toLowerCase();
+  let word2 = arr[1].toLowerCase();
+  let aux = 0;
+  console.log(word1, word2);
+
+  for (let i = 0; i < word1.length; i++) {
+
+    for (let j = 0; j < word2.length; j++) {
+      if (word1[i] == word2[j]) {
+        aux++;
+        j = word2.length;
+      }
+    }
+  }
+  console.log(aux, word2.length)
+  if (aux != word2.length) return false
+
+  return true;
+
+}
+console.log(mutation(["hello", "HeLol"]))
