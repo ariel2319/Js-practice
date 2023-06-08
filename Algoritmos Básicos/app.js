@@ -211,3 +211,39 @@ bouncer([7, "ate", "", false, 9]);
 //Por ejemplo, getIndexToIns([1,2,3,4], 1.5) debe devolver 1 por que este valor es más grande que 1 (índice 0), pero menor que 2 (índice 1).
 
 //De esta forma, getIndexToIns([20,3,5], 19) debe devolver 2 porque una vez ordenado el arreglo, éste se verá así [3,5,20] y 19 es menor que 20 (índice 2) y mayor que 5 (índice 1).
+
+
+//todo Mutaciones
+//Devuelve true si la cadena de caracteres en el primer elemento del arreglo contiene todas las letras de la cadena en el segundo elemento del arreglo.
+
+cls()
+function mutation(arr) {
+  let word1 = arr[0].toLowerCase();
+  let word2 = arr[1].toLowerCase();
+  let aux = 0;
+  console.log(word1, word2)
+
+  for (let i = 0; i < word2.length; i++) {
+    if (word1.indexOf(word2[i]) < 0) return false
+  }
+  return true;
+}
+
+mutation(["hello", "hey"]);
+
+
+//todo Monito Trocitos
+//Escribe una función que divida un arreglo (primer argumento) en grupos de la longitud size (segundo argumento) y los devuelva como un arreglo bidimensional.
+cls()
+function chunkArrayInGroups(arr, size) {
+  let aux = [];
+
+  let i = 0;
+  for (let count = 0; count < arr.length; count + size) {
+    aux = arr.slice(count, size)
+    console.log(aux) 
+  }
+  return arr;
+}
+
+chunkArrayInGroups(["a", "b", "c", "d"], 2);
