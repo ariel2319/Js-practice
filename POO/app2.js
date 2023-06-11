@@ -1,5 +1,7 @@
 //! POO 2
 
+function cls() { console.clear() }
+
 //todo Utiliza propiedades "prototype" para reducir código duplicado
 
 /* Dado que numLegs probablemente tendrán el mismo valor para todas las instancias de Bird, esencialmente tienes una variable duplicada numLegs dentro de cada instancia de Bird.
@@ -81,3 +83,13 @@ console.log(aim, aim3, aim2)
 
 
 //todo  Entendiendo de dónde viene el prototipo de un objeto
+//Así como las personas heredamos genes de nuestros padres, los objetos también heredan su prototype directamente de la función constructor que lo creó. Por ejemplo, aquí el constructor Dog crea el objeto beagle:
+cls()
+function Dogui(name) {
+  this.name = name;
+}
+let beagle3 = new Dogui("Snoopy");
+// Cambia solo el código debajo de esta línea
+Dog.prototype.isPrototypeOf(beagle3);
+
+//todo Comprende la cadena "prototype"
