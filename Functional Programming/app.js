@@ -466,9 +466,22 @@ filteredList = filteredList.map(filmis => ({
   rating: filmis["imdbRating"]
 }))
 // Cambia solo el código encima de esta línea
-/* 
-El método map iterará sobre cada elemento de un arreglo y devuelve un nuevo arreglo que contiene los resultados de llamar a la función callback en cada elemento. Esto lo hace sin mutar el arreglo original.
-
 console.log(filteredList);
-Cuando se utiliza la función callback, se pasan tres argumentos. El primer argumento es el elemento actual que se está procesando. El segundo es el índice de ese elemento y el tercero es el arreglo al que se llamó el método map.
- */
+
+
+//todo Implementa el método filter en un prototipo
+/* 
+Escribe tu propio Array.prototype.myFilter(), que debe comportarse exactamente como Array.prototype.filter(). No debes utilizar el método incorporado filter. Se puede acceder a la instancia Array en el método myFilter usando this.
+*/
+
+Array.prototype.myFilter = function (callback) {
+  const newArray = [];
+  // Cambia solo el código debajo de esta línea
+  for (let i = 0; i < this.length; i++) {
+    if (Boolean(callback(this[i], i, this)) === true) {
+      newArray.push(this[i]);
+    }
+  }
+  // Cambia solo el código encima de esta línea
+  return newArray;
+};
