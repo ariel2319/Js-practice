@@ -174,3 +174,8 @@ remove('pepito')
 console.log(bookList)
 
 //todo Usa el método "map" para extraer datos de un arreglo
+/* 
+El método map iterará sobre cada elemento de un arreglo y devuelve un nuevo arreglo que contiene los resultados de llamar a la función callback en cada elemento. Esto lo hace sin mutar el arreglo original.
+
+Cuando se utiliza la función callback, se pasan tres argumentos. El primer argumento es el elemento actual que se está procesando. El segundo es el índice de ese elemento y el tercero es el arreglo al que se llamó el método map.
+ */
