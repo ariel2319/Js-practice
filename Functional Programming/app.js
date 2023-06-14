@@ -485,3 +485,88 @@ Array.prototype.myFilter = function (callback) {
   // Cambia solo el código encima de esta línea
   return newArray;
 };
+
+//todo Devolver parte de un arreglo mediante el método slice
+/*
+El método slice devuelve una copia de ciertos elementos de un arreglo. Puede tomar dos argumentos, el primero da el índice de dónde comenzar el corte, el segundo es el índice de dónde terminar el corte (y no es inclusivo). Si no se proporcionan los argumentos, el valor predeterminado es comenzar desde el principio del arreglo hasta el final, la cual es una manera fácil de hacer una copia de todo el arreglo. El método slice no muta el arreglo original, pero devuelve uno nuevo.
+  */
+//*Utiliza el método slice en la función sliceArray para retornar parte del arreglo anim dados los índices beginSlice y endSlice. La función debe devolver un arreglo.
+cls()
+function sliceArray(anim, beginSlice, endSlice) {
+  // Cambia solo el código debajo de esta línea
+  let aux = anim.slice(beginSlice, endSlice)
+  return aux
+  // Cambia solo el código encima de esta línea
+}
+
+const inputAnim = ["Cat", "Dog", "Tiger", "Zebra", "Ant"];
+console.log(sliceArray(inputAnim, 1, 3))
+
+
+//todo Remueve elementos de un arreglo usando slice en lugar de splice
+/*  
+Como vimos en el último desafío, el método slice no muta el arreglo original, pero devuelve uno nuevo que puede ser guardado en una variable. Recuerda que el método slice recibe dos argumentos para indicar el comienzo y el final del segmento (el final es no inclusivo) y retorna estos elementos en un nuevo arreglo. Usar el método slice en lugar de splice ayuda a prevenir cualquier efecto colateral de mutar un arreglo.
+*/
+//*Reescribe la función nonMutatingSplice usando slice en lugar de splice. Debe limitar el arreglo proporcionado cities a una longitud de 3 y devolver un nuevo arreglo con solo los primeros tres elementos. No modifiques el arreglo original proporcionado en la función.
+
+
+cls()
+function nonMutatingSplice(cities) {
+  // Cambia solo el código debajo de esta línea
+  let aux = cities.slice(0, 3)
+  return aux;
+  // Cambia solo el código encima de esta línea
+}
+const inputCities = ["Chicago", "Delhi", "Islamabad", "London", "Berlin"];
+console.log(nonMutatingSplice(inputCities))
+
+
+//todo Combina dos arreglos utilizando el método "concat"
+/* 
+Concatenation significa unir elementos de extremo a extremo. JavaScript ofrece el método concat para cadenas y arreglos, que funciona de la misma manera. Para arreglos, el método es llamado desde un arreglo, un segundo arrelgo es proporcionado como argumento de concat, este se añadirá al final del primer arreglo. Devuelve un nuevo arreglo, sin mutar ninguno de los arreglos originales. Aquí hay un ejemplo:
+*/
+
+//*Usa el método concat en la función nonMutatingConcat para concatenar attach al final de original. La función deber devolver el arreglo concatenado.
+function nonMutatingConcat(original, attach) {
+  // Cambia solo el código debajo de esta línea
+  let aux = original.concat(attach)
+  return aux
+  // Cambia solo el código encima de esta línea
+}
+
+const first = [1, 2, 3];
+const second = [4, 5];
+console.log(nonMutatingConcat(first, second))
+
+//todo Agrega elementos al final de un arreglo utilizando concat en lugar de push
+//*Cambia la función nonMutatingPush de manera que utilice concat para unir newItem al final de original sin alterar los arreglos original o newItem. La función debe devolver un arreglo.
+cls()
+function nonMutatingPush(original, newItem) {
+  // Cambia solo el código debajo de esta línea
+  let aux = original.concat(newItem)
+  return aux
+
+  // Cambia solo el código encima de esta línea
+}
+
+const first2 = [1, 2, 3];
+const second2 = [4, 5];
+nonMutatingPush(first2, second2);
+
+//todo Utiliza el método "reduce" para analizar datos
+/* 
+El método reduce permite formas más generales de procesamiento de arreglos y es posible mostrar que tanto filter como map pueden derivarse como aplicaciones especiales de reduce. El método reduce itera sobre cada elemento del arreglo y devuelve un solo valor (por ejemplo una cadena, número, objeto, arreglo). Esto se consigue mediante una función callback que se llama en cada iteración.
+La función callback acepta cuatro argumentos. El primer argumento se conoce como acumulador, que recibe el valor retornado de la función callback de la iteración anterior, el segundo es el elemento actual que se está procesando, el tercero es el índice de ese elemento y el cuarto es el arreglo sobre el que se llama a la función reduce.
+*/
+//*La variable watchList contiene un arreglo de objetos con información sobre varias películas. Utiliza reduce para encontrar la calificación media en IMDB de las películas dirigidas por Christopher Nolan. Recuerda de desafíos anteriores filtrar (filter) los datos y mapear (map) sobre ellos para extraer lo que necesitas. Puede que necesites crear otras variables y devolver la calificación media con la función getRating. Ten en cuenta que los valores de calificación se guardan como cadenas en el objeto y necesitan ser convertidos en números antes de ser utilizados en cualquier operación matemática.
+cls()
+function getRating(watchList) {
+  // Cambia solo el código debajo de esta línea
+  let averageRating;
+
+
+  // Cambia solo el código encima de esta línea
+  return averageRating;
+}
+
+console.log(getRating(watchList));
